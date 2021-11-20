@@ -11,6 +11,7 @@ The Facebook test data used here is:
 email: open_pfpeeod_user@tfbnwt.net
 
 password: test12345
+
 ------
 After you log in with these data, the "https://graph.facebook.com/me?access_token=ACCESS-TOKEN" API is called and you get some information about the logged in user.
 
