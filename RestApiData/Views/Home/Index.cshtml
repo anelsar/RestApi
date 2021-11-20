@@ -1,0 +1,61 @@
+﻿@model RootInfo 
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            <div class="card shadow">
+                <div class="card-body">
+                    <ul class="list-group m-2">
+                        <li class="list-group-item">
+                            @Html.ActionLink("Get some info about yourself on facebook", "Index", "Login")
+                        </li>
+                    </ul>
+                    @if (Model.Id != null)
+                    {
+                        @using (Html.BeginForm("SaveData", "Home"))
+                        {
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    @Html.TextBoxFor(m => m.Id, new { @class = "form-control col" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control col" })
+                                </div>
+                            </div>
+                            @for (int i = 0; i < 1; i++)
+                            {
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        @Html.TextBoxFor(m => m.Metadata.Fields[i].Description, new { @class = "form-control col" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        @Html.TextBoxFor(m => m.Metadata.Fields[i].Name, new { @class = "form-control col" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        @Html.TextBoxFor(m => m.Metadata.Fields[i].Type, new { @class = "form-control col" })
+                                    </div>
+                                </div>
+                            }
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-12">
+                                    <input type="submit" value="Save to JSON file" class="btn btn-default col btn-success" />
+                                </div>
+                            </div>
+                        }
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
