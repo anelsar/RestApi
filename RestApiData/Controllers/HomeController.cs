@@ -44,7 +44,6 @@ namespace RestApiData.Controllers
         {
             // Saving the data that we got frome the API (changed or original) to the .json file
             var obj = JsonConvert.SerializeObject(model, Formatting.Indented);
-            Debug.WriteLine(obj);
             string filePath = @"..\RestApiData\JsonDb\json.json";
             System.IO.File.WriteAllText(filePath, obj);
             return View("SaveDataView");

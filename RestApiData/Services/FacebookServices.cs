@@ -27,7 +27,6 @@ namespace RestApiData.Services
             {
                 var dataObjects = response.Content.ReadAsStringAsync().Result;
                 var model = JsonConvert.DeserializeObject<RootInfo>(dataObjects);
-                Debug.WriteLine(model.Metadata.Fields);
                 return model;
             }
             return null;

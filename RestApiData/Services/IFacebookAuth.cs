@@ -7,7 +7,6 @@ namespace RestApiData.Services
 {
     public interface IFacebookAuth
     {
-        Task<string> GetCode();
         string GetAccessToken(string code);
     }
 }

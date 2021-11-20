@@ -20,18 +20,6 @@ namespace RestApiData.Services
             _httpClient = httpClient;
             _myConfiguration = myConfiguration;
         }
-        public async Task<string> GetCode()
-        {
-            var request = new HttpRequestMessage(HttpMethod.Get, "https://www.facebook.com/v12.0/dialog/oauth?client_id=961051304491808&redirect_uri=https%3A%2F%2Flocalhost%3A44334%2F&state=xyzABC123");
-            var response = await _httpClient.SendAsync(request);
-            
-            if (response.IsSuccessStatusCode)
-            {
-                var dataObjects = response.Content.ReadAsStringAsync().Result;
-                return dataObjects;
-            }
-            return null;
-        }
         
         // Function for getting the user access token so we can authenticate the user and call facebook APIs
         public string GetAccessToken(string code)
@@ -42,8 +30,6 @@ namespace RestApiData.Services
             {
                 var dataObjects = response.Content.ReadAsStringAsync().Result; 
                 var jsonObj = JsonConvert.DeserializeObject<AccesToken>(dataObjects);
-                
-                Debug.WriteLine(jsonObj.AccessToken);
                 return jsonObj.AccessToken;
             }
             return null;
