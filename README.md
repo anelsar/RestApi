@@ -8,9 +8,9 @@ To get the URL encoded link, you have online encoders like this page: https://ww
 
 The Facebook test data used here is:
 
-email: open_pfpeeod_user@tfbnwt.net
+email: 
 
-password: test12345
+password: 
 
 ------
 After you log in with these data, the "https://graph.facebook.com/me?access_token=ACCESS-TOKEN" API is called and you get some information about the logged in user.
