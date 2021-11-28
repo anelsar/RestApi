@@ -1,6 +1,6 @@
 This app uses the Facebook API (Graph API) to get data about a user. After you click on the "Get some info about yourself on facebook" link, a facebook log in page will apear. You can log in with the test account provided by Facebook. By entering the credentials and authenticating the user, an access token is sent and we will use that access token to get the information about the currently logged in user. Some of the information will appear in text boxes, which you can modify and save the modified (or not modified) information to a local .json file.
 
-For this app to work, you will need to clone or download this project to you computer. You need to have Visual studio '19 installed. In the project's appsettings.json file, you will need to paste your url encoded localhost link
+For this app to work, you will need to clone or download this project to you computer. You need to have Visual studio '19 installed. In the project appsettings.json file, you will need to paste your url encoded localhost link
 
 "MyConfiguration": { "RedirectUri": "your localhost urlencoded link" }
 
